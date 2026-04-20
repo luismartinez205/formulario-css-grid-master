@@ -81,6 +81,7 @@ main {
 
 .formulario__grupo-terminos, 
 .formulario__mensaje,
+.formulario__mensaje-exito,
 .formulario__grupo-btn-enviar {
 	grid-column: span 2;
 }
@@ -98,7 +99,9 @@ main {
 	display: block;
 }
 
-.formulario__mensaje p {
+.formulario__mensaje p,
+.formulario__mensaje-exito p
+{
 	margin: 0;
 	font-size: 0.7rem;
 }
@@ -128,8 +131,13 @@ main {
 }
 
 .formulario__mensaje-exito {
-	font-size: 14px;
-	color: #119200;
+	height: 45px;
+	line-height: 45px;
+	background: #12f012;
+	padding: 0 15px;
+	border-radius: 3px;
+	font-size: 0.8rem;
+	color: #000;
 	display: none;
 }
 
@@ -175,3 +183,26 @@ main {
 		width: 100%;
 	}
 }
+
+.formulario__label:last-child {
+    background-image: url('../img/check2-removebg-preview.png'); /* estado vacío */
+    background-repeat: no-repeat;
+    background-position: 54% 8%;
+    background-size: 20px 20px;
+}
+
+.formulario__checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+    opacity: 0;
+}
+
+
+.formulario__label:has(input:checked) {
+    background-image: url('../img/icon-checkbox-check.svg');
+}
+
+
